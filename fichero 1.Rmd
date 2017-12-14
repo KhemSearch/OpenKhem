@@ -1,0 +1,86 @@
+---
+title: "Breve revisión sobre la problemática del uso de plaguicidas neonicotinoides y su impacto en los polinizadores"
+author: "Laura Carbonell, Marta Padial"
+date: "13 de diciembre de 2017"
+output: html_document
+---
+
+```{r  include=FALSE}
+y<-c(6,4, 3,2.5)
+x<-c(1947,1970,1990,2014)
+
+
+```
+
+
+En la actualidad existe un creciente interés por el impacto que tienen determinados plaguicidas sobre las colonias de abejas ya que es de suma importancia el servicio que estas proporcionan a los ecosistemas naturales y a la agricultura. Por este motivo es necesaria su protección.
+El problema de la intoxicación por plaguicidas de las abejas parecía estar prácticamente resuelto. El número de casos disminuía en comparación con la década de los setenta. El problema de la intoxicación, sin embargo, no ha desaparecido, sino que se ha transformado en un problema de envenenamiento por pesticidas "tradicionales" como pesticidas organofosforados, a envenenamiento por nuevos plaguicidas como aquellos que contienen neonicotinoides como agente insecticida[1].
+Como se muestra en la Figura 1 el descenso de las colonias de abejas a lo largo del tiempo ha sido evidente [2].
+
+
+
+```{r pressure, echo=FALSE}
+plot(x,y, type="l", main= "Descenso de las colonias de abejas", xlab= "Año", ylab="Número de colonias (millones)", lwd=2, col="blue")
+
+```
+
+
+Aunque el papel de los insecticidas en la disminución global de las poblaciones de polinizadores sigue estando en entredicho, ahora es más evidente que algunos de ellos muestran efectos negativos en su salud, tanto a nivel individual como de colonia [3]. Tendencia reflejada en las siguientes figuras  que muestran la relación entre la exposición a insecticidas y el descenso de la población en colmenas (Figura 2) y la mortalidad anual de abejas en distintos países de la Unión Europea (Figura 3) [4][5].
+```{r echo=FALSE}
+y2<-c(0,0,50,50,100,100,100)
+y3<-c(0,0,25,25,25,75,100)
+x<-c(10,12,14,16,18,20,22)
+
+```
+
+```{r echo=FALSE}
+
+plot(x,y2, type="l", ann=F,axes=F, lwd=2, col="green")
+par(new=TRUE)
+
+plot(x,y3, type="l", main= "Exposición a insecticidas y el descenso de la población en colmenas", xlab= "Número de semanas tras la exposición al insecticida", ylab="% de colmenas despobladas", lwd=2, col="red")
+grid()
+legend(10,80,legend=c("20 µg/kg","400 µg/kg"),col=c("red","green"), lty=1:1, cex=0.8)
+
+```
+
+```{r include=FALSE}
+x<-c(1,2,3,4,5,6,7,8)
+names(x)<-c("Portugal","España","Francia","ReinoUnido","Bélgica", "Alemania","Italia", "Dinamarca")
+xb<-names(x)
+y<-c(3.5, 6.8, 14,9.7,8.9,3.8,2.3,2.9)
+
+```
+
+```{r echo=FALSE}
+barplot(name=xb,y, main= "Mortalidad anual de abejas en diferentes países", ylab="% de abejas muertas", las=2, col=rainbow(9))
+
+
+```
+
+
+En menos de 20 años, los neonicotinoides se han convertido en una clase ampliamente utilizada de insecticidas con una cuota de mercado global de más del 25%. Para los polinizadores, esto ha transformado el paisaje agroquímico. Estos productos químicos imitan el neurotransmisor de acetilcolina y son altamente neurotóxicos para insectos. Su amplia aplicación, persistencia en suelo y agua y potencial de absorción por cultivos y plantas silvestres via xilema hacen que los polinizadores estén expuestos a concentraciones subletales de neonicotinoides durante la mayor parte del año [6].
+Tomasz Kiljanek et al. revisaron los casos de intoxicación relacionados con neonicotinoides. Esto es de importancia por lo anteriormente comentado, ya que supone que existe una intoxicación secundaria inducida por la planta contaminada con plaguicidas y consumida continuamente por la misma generación de abejas y que puede causar una  intoxicación subletal. Esto conduce a un comportamiento anormal identificado durante la intoxicación aguda. El proceso descrito se refiere principalmente a colonias robustas y fuertes que fueron capaces de recolectar mucha comida debido a la efectiva protección de las plantas con plaguicidas.
+La habilidad descrita por los neonicotinoides para persistir en el tejido vegetal, en el suelo y agua causa un riesgo extremo de toxicidad y por tanto, puede llegar a provocar el colapso de la colonia. El funcionamiento del sistema nervioso de las abejas no es adecuado y en consecuencia su comportamiento no es el esperado. Esto se debe a que los neonicotinoides afectan al sistema nervioso central de la abeja produciendo efectos adversos en su capacidades motoras y de navegación por lo que no son capaces de recolectar alimento y volver a la colmena.  La ausencia de un adecuado cumplimiento de las funciones sociales asignadas a las diferentes castas de abejas, conduce a la extinción de la colmena [6].
+
+Por todo lo expuesto anteriormente,surge la necesidad de evaluar el impacto ambiental de esta familia de compuestos. Es de gran interés monitorizar y analizar los residuos procedentes de neonicotinoides con métodos analíticos sensibles para su determinación simultánea en matrices complejas.
+
+
+La plataforma utilizada para el desarrollo de este proyecto ha sido Github utilizandose la licencia GNU General Public v3.0. Los pasos realizados para la obtención de esta revisión a cerca de la problématica y del interés de su estudio se pueden observar a través del siguiente enlace:
+
+https://github.com/KhemSearch/OpenKhem
+
+**Referencias**
+
+[1]	T. Kiljanek, A. Niewiadowska, and A. Posyniak, “Pesticide poisoning of honeybees: A review of symptoms, incident classification, and causes of poisoning,” J. Apic. Sci., vol. 60, no. 2, pp. 5–24, 2016.
+
+[2]        US Department of Agriculture's (USDA) National Agricultural Statistics Service (NASS).
+
+[3]        https://www.uv.es/uvweb/master-chemistry/en/blog/el-agroquimico-que-pone-en-peligro-a-las-abejas-1285949128883/GasetaRecerca.html?id=1285956888076
+
+[4]        Informe PISA 2015.
+
+[5]        Troposfera.org y EL PAÍS.
+
+[6]	J. P. Van der Sluijs, N. Simon-Delso, D. Goulson, L. Maxim, J. M. Bonmatin, and L. P. Belzunces, “Neonicotinoids, bee disorders and the sustainability of pollinator services,” Curr. Opin. Environ. Sustain., vol. 5, no. 3–4, pp. 293–305, 2013.
+
